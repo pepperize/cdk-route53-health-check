@@ -1,8 +1,9 @@
 {
-  "name": "cdk-route53-health-check",
+  "name": "@pepperize/cdk-route53-health-check",
+  "description": "Create Route53 health checks",
   "repository": {
     "type": "git",
-    "url": "https://github.com/patrick.florek/cdk-route53-health-check.git"
+    "url": "https://github.com/pepperize/cdk-route53-health-check.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -17,7 +18,10 @@
     "format": "npx projen format",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
+    "package:dotnet": "npx projen package:dotnet",
+    "package:java": "npx projen package:java",
     "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "pre-compile": "npx projen pre-compile",
     "release": "npx projen release",
@@ -38,7 +42,7 @@
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk-lib": "2.1.0",
+    "aws-cdk-lib": "2.46.0",
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-config-prettier": "^8.5.0",
@@ -61,14 +65,23 @@
     "typescript": "^4.8.4"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.46.0",
     "constructs": "^10.0.5"
   },
   "keywords": [
-    "cdk"
+    "AWS",
+    "CDK",
+    "CloudWatch",
+    "Route53",
+    "Utilities",
+    "cdk",
+    "health-check"
   ],
   "main": "lib/index.js",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
     "testMatch": [
@@ -114,7 +127,23 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "java": {
+        "package": "com.pepperize.cdk.route53_health_check",
+        "maven": {
+          "groupId": "com.pepperize",
+          "artifactId": "cdk-route53-health-check"
+        }
+      },
+      "python": {
+        "distName": "pepperize.cdk-route53-health-check",
+        "module": "pepperize_cdk_route53_health_check"
+      },
+      "dotnet": {
+        "namespace": "Pepperize.CDK",
+        "packageId": "Pepperize.CDK.Route53HealthCheck"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"

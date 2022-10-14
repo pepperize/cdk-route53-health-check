@@ -10,6 +10,7 @@
     ".github/workflows/pull-request-lint.yml",
     ".github/workflows/release.yml",
     ".gitignore",
+    ".gitpod.yml",
     ".mergify.yml",
     ".prettierignore",
     ".prettierrc.json",

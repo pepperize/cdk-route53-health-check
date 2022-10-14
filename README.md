@@ -1,1 +1,79 @@
-# replace this
+[![GitHub](https://img.shields.io/github/license/pepperize/cdk-route53-health-check?style=flat-square)](https://github.com/pepperize/cdk-route53-health-check/blob/main/LICENSE)
+[![npm (scoped)](https://img.shields.io/npm/v/@pepperize/cdk-route53-health-check?style=flat-square)](https://www.npmjs.com/package/@pepperize/cdk-route53-health-check)
+[![PyPI](https://img.shields.io/pypi/v/pepperize.cdk-route53-health-check?style=flat-square)](https://pypi.org/project/pepperize.cdk-route53-health-check/)
+[![Nuget](https://img.shields.io/nuget/v/Pepperize.CDK.Route53HealthCheck?style=flat-square)](https://www.nuget.org/packages/Pepperize.CDK.Route53HealthCheck/)
+[![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/com.pepperize/cdk-route53-health-check?server=https%3A%2F%2Fs01.oss.sonatype.org%2F&style=flat-square)](https://s01.oss.sonatype.org/content/repositories/releases/com/pepperize/cdk-route53-health-check/)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/pepperize/cdk-route53-health-check/release/main?label=release&style=flat-square)](https://github.com/pepperize/cdk-route53-health-check/actions/workflows/release.yml)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pepperize/cdk-route53-health-check?sort=semver&style=flat-square)](https://github.com/pepperize/cdk-route53-health-check/releases)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod&style=flat-square)](https://gitpod.io/#https://github.com/pepperize/cdk-route53-health-check)
+
+# AWS CDK Route53 HealthCheck
+
+Generate SES smtp credentials for a user and store the credentials in a SecretsManager Secret.
+
+## Install
+
+### TypeScript
+
+```shell
+npm install @pepperize/cdk-route53-health-check
+```
+
+or
+
+```shell
+yarn add @pepperize/cdk-route53-health-check
+```
+
+### Python
+
+```shell
+pip install pepperize.cdk-route53-health-check
+```
+
+### C# / .Net
+
+```
+dotnet add package Pepperize.CDK.Route53HealthCheck
+```
+
+### Java
+
+```xml
+<dependency>
+  <groupId>com.pepperize</groupId>
+  <artifactId>cdk-route53-health-check</artifactId>
+  <version>${cdkRoute53HealthCheck.version}</version>
+</dependency>
+```
+
+## Usage
+
+```shell
+npm install @pepperize/cdk-route53-health-check
+```
+
+See [API.md](https://github.com/pepperize/cdk-route53-health-check/blob/main/API.md).
+
+### Create a Route53 HealthCheck for an endpoint
+
+```typescript
+new EndpointHealthCheck(stack, "HealthCheck", {
+  domainName: "pepperize.com",
+});
+```
+
+Generates
+
+```yaml
+Resources:
+  Type: AWS::Route53::HealthCheck
+  Properties:
+    HealthCheckConfig:
+      FullyQualifiedDomainName: "pepperize.com"
+      Port: 443
+      Type: "HTTPS"
+      EnableSNI: true
+```
+
+See for more options [API Reference - EndpointHealthCheckProps](https://github.com/pepperize/cdk-route53-health-check/blob/main/API.md#endpointhealthcheckprops-)
