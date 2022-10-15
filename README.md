@@ -9,7 +9,7 @@
 
 # AWS CDK Route53 HealthCheck
 
-Generate SES smtp credentials for a user and store the credentials in a SecretsManager Secret.
+Create Route53 health checks 
 
 ## Install
 
