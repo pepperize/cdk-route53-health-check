@@ -32,7 +32,7 @@ const alarm = new cloudwatch.Alarm(this, "Alarm", {
 });
 ```
 
-See more options [](https://github.com/pepperize/cdk-route53-health-check/blob/main/API.md#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps)
+See more options [API Reference](https://github.com/pepperize/cdk-route53-health-check/blob/main/API.md#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps)
 
 ## Install
 
