@@ -1,6 +1,6 @@
 {
   "name": "@pepperize/cdk-route53-health-check",
-  "description": "Create Route53 health checks",
+  "description": "Create Route53 HealthChecks to monitor TCP, HTTP, HTTPS endpoints, CloudWatch Alarms and other Route53 HealthChecks.",
   "repository": {
     "type": "git",
     "url": "https://github.com/pepperize/cdk-route53-health-check.git"
@@ -70,8 +70,12 @@
   },
   "keywords": [
     "AWS",
+    "Alarm",
     "CDK",
+    "Calculated",
     "CloudWatch",
+    "Endpoint",
+    "Metric",
     "Route53",
     "Utilities",
     "cdk",

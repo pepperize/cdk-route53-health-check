@@ -1,6 +1,6 @@
 import { Annotations, Tags } from "aws-cdk-lib";
 import * as cloudwatch from "aws-cdk-lib/aws-cloudwatch";
-import { CfnHealthCheck } from "aws-cdk-lib/aws-route53";
+import * as route53 from "aws-cdk-lib/aws-route53";
 import { Construct } from "constructs";
 import { HealthCheckBase, HealthCheckOptions, HealthCheckType } from "./health-check";
 
@@ -21,6 +21,8 @@ export interface EndpointHealthCheckProps extends HealthCheckOptions {
   readonly ipAddress?: string;
   /**
    * The protocol that Route53 uses to communicate with the endpoint.
+   *
+   * <b>An IP address must be specified if protocol TCP</b>
    *
    * @default HTTPS
    */
@@ -136,7 +138,7 @@ export class EndpointHealthCheck extends HealthCheckBase {
       Annotations.of(this).addError("At least three HealthCheckerRegions have to be given");
     }
 
-    const resource = new CfnHealthCheck(this, "Resource", {
+    const resource = new route53.CfnHealthCheck(this, "Resource", {
       healthCheckConfig: {
         enableSni: enableSni,
         fullyQualifiedDomainName: props.domainName,
@@ -219,13 +221,28 @@ export class EndpointHealthCheck extends HealthCheckBase {
 
   /**
    * The percentage of Route53 health checkers that report that the status of the health check is healthy
+   *
+   * <b>LatencyGraphs has to be enabled</b>
+   *
+   * Valid statistics: Average (recommended), Minimum, Maximum
    */
   public metricHealthCheckPercentageHealthy(props?: cloudwatch.MetricOptions): cloudwatch.Metric {
     return this.metric("HealthCheckPercentageHealthy", { statistic: cloudwatch.Statistic.AVERAGE, ...props });
   }
 
   /**
+   * The time in milliseconds that it took Route53 health checkers to establish a TCP connection with the endpoint
+   *
+   * Valid statistics: Average (recommended), Minimum, Maximum
+   */
+  public metricConnectionTime(props?: cloudwatch.MetricOptions): cloudwatch.Metric {
+    return this.metric("ConnectionTime", { statistic: cloudwatch.Statistic.AVERAGE, ...props });
+  }
+
+  /**
    * The time in milliseconds that it took Route53 health checkers to complete the SSL/TLS handshake
+   *
+   * Valid statistics: Average, Minimum, Maximum
    */
   public metricSSLHandshakeTime(props?: cloudwatch.MetricOptions): cloudwatch.Metric {
     return this.metric("SSLHandshakeTime", { statistic: cloudwatch.Statistic.AVERAGE, ...props });
@@ -233,6 +250,8 @@ export class EndpointHealthCheck extends HealthCheckBase {
 
   /**
    * The time in milliseconds that it took Route53 health checkers to receive the first byte of the response to an HTTP or HTTPS request
+   *
+   * Valid statistics: Average (recommended), Minimum, Maximum
    */
   public metricTimeToFirstByte(props?: cloudwatch.MetricOptions): cloudwatch.Metric {
     return this.metric("TimeToFirstByte", { statistic: cloudwatch.Statistic.AVERAGE, ...props });

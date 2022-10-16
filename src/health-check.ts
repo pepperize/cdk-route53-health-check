@@ -1,6 +1,5 @@
-import { ITaggable, TagManager, TagType } from "aws-cdk-lib";
+import { ITaggable, Resource, TagManager, TagType } from "aws-cdk-lib";
 import * as cloudwatch from "aws-cdk-lib/aws-cloudwatch";
-import { Construct } from "constructs";
 
 /**
  * @internal
@@ -17,6 +16,7 @@ export interface HealthCheckOptions {
 }
 
 export interface IHealthCheck {
+  readonly healthCheckId: string;
   /**
    * Return the given named metric for this HealthCheck.
    */
@@ -31,7 +31,7 @@ export interface IHealthCheck {
 /**
  * @internal
  */
-export abstract class HealthCheckBase extends Construct implements IHealthCheck, ITaggable {
+export abstract class HealthCheckBase extends Resource implements IHealthCheck, ITaggable {
   public abstract readonly healthCheckId: string;
 
   readonly tags = new TagManager(TagType.STANDARD, "AWS::Route53::HealthCheck");
@@ -67,10 +67,4 @@ export enum HealthCheckType {
   CALCULATED = "CALCULATED",
   CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC",
   RECOVERY_CONTROL = "RECOVERY_CONTROL",
-}
-
-export enum InsufficientDataHealthStatus {
-  HEALTHY = "Healthy",
-  UNHEALTHY = "Unhealthy",
-  LAST_KNOWN_STATUS = "LastKnownStatus",
 }

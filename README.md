@@ -9,7 +9,30 @@
 
 # AWS CDK Route53 HealthCheck
 
-Create Route53 health checks 
+Create Route53 HealthChecks to monitor TCP, HTTP, HTTPS endpoints, CloudWatch Alarms and other Route53 HealthChecks.
+
+Currently supported types of Route53 HealthChecks:
+
+- [Health checks that monitor an endpoint](https://github.com/pepperize/cdk-route53-health-check#create-a-route53-healthcheck-for-an-endpoint)
+- [Health checks that monitor other health checks](https://github.com/pepperize/cdk-route53-health-check#create-a-route53-healthcheck-to-monitor-cloudwatch-alarms)
+- [Health checks that monitor CloudWatch alarms](https://github.com/pepperize/cdk-route53-health-check#create-a-route53-healthcheck-to-monitor-other-healthchecks)
+
+Easily create a CloudWatch Alarm based on the Route53 HealthCheck:
+
+```typescript
+const healthCheck = new EndpointHealthCheck(stack, "HealthCheck", {
+  domainName: "pepperize.com",
+});
+
+const alarm = new cloudwatch.Alarm(this, "Alarm", {
+  metric: healthCheck.metric(),
+  comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
+  threshold: 1,
+  evaluationPeriods: 1,
+});
+```
+
+See more options [](https://github.com/pepperize/cdk-route53-health-check/blob/main/API.md#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps)
 
 ## Install
 
@@ -77,3 +100,31 @@ Resources:
 ```
 
 See for more options [API Reference - EndpointHealthCheckProps](https://github.com/pepperize/cdk-route53-health-check/blob/main/API.md#endpointhealthcheckprops-)
+
+### Create a Route53 HealthCheck to monitor other HealthChecks
+
+```typescript
+const endpointHealthCheck = new EndpointHealthCheck(stack, "HealthCheck", {
+  domainName: "pepperize.com",
+});
+new CalculatedHealthCheck(stack, "CalculatedHealthCheck", {
+  childHealthChecks: [healthCheck],
+});
+```
+
+See for more options [API Reference - CalculatedHealthCheckProps](https://github.com/pepperize/cdk-route53-health-check/blob/main/API.md#calculatedhealthcheckprops-)
+
+### Create a Route53 HealthCheck to monitor CloudWatch Alarms
+
+```typescript
+const alarm = cloudwatch.Alarm.fromAlarmArn(
+  stack,
+  "Alarm",
+  "arn:aws:cloudwatch:us-east-1:123456789012:alarm:any-alarm"
+);
+new AlarmHealthCheck(stack, "HealthCheck", {
+  alarm: alarm,
+});
+```
+
+See for more options [API Reference - AlarmHealthCheckProps](https://github.com/pepperize/cdk-route53-health-check/blob/main/API.md#alarmhealthcheckprops-)

@@ -5,8 +5,20 @@ const project = new AwsCdkConstructLibrary({
   authorAddress: "patrick.florek@gmail.com",
   cdkVersion: "2.46.0",
   name: "@pepperize/cdk-route53-health-check",
-  description: "Create Route53 health checks",
-  keywords: ["AWS", "CDK", "Route53", "health-check", "CloudWatch", "Utilities"],
+  description:
+    "Create Route53 HealthChecks to monitor TCP, HTTP, HTTPS endpoints, CloudWatch Alarms and other Route53 HealthChecks.",
+  keywords: [
+    "AWS",
+    "CDK",
+    "Route53",
+    "health-check",
+    "Endpoint",
+    "Calculated",
+    "CloudWatch",
+    "Alarm",
+    "Metric",
+    "Utilities",
+  ],
   repositoryUrl: "https://github.com/pepperize/cdk-route53-health-check.git",
 
   projenrcTs: true,
