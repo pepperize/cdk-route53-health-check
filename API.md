@@ -1196,6 +1196,8 @@ public readonly protocol: Protocol;
 
 The protocol that Route53 uses to communicate with the endpoint.
 
+<b>An IP address must be specified if protocol TCP</b>
+
 ---
 
 ##### `regions`<sup>Optional</sup> <a name="regions" id="@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.regions"></a>
