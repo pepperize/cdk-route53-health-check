@@ -136,6 +136,7 @@ Route53 health checkers report that the HealthCheck is healthy or unhealthy.
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.fromHealthCheckId">fromHealthCheckId</a></code> | Import an existing Route53 HealthCheck. |
 
 ---
 
@@ -186,6 +187,34 @@ Check whether the given construct is a Resource.
 ###### `construct`<sup>Required</sup> <a name="construct" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.isResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
+
+---
+
+##### `fromHealthCheckId` <a name="fromHealthCheckId" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.fromHealthCheckId"></a>
+
+```typescript
+import { AlarmHealthCheck } from '@pepperize/cdk-route53-health-check'
+
+AlarmHealthCheck.fromHealthCheckId(scope: Construct, id: string, healthCheckId: string)
+```
+
+Import an existing Route53 HealthCheck.
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.fromHealthCheckId.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### `id`<sup>Required</sup> <a name="id" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.fromHealthCheckId.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `healthCheckId`<sup>Required</sup> <a name="healthCheckId" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.fromHealthCheckId.parameter.healthCheckId"></a>
+
+- *Type:* string
 
 ---
 
@@ -431,6 +460,7 @@ Route53 health checkers report that the HealthCheck is healthy or unhealthy.
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.fromHealthCheckId">fromHealthCheckId</a></code> | Import an existing Route53 HealthCheck. |
 
 ---
 
@@ -481,6 +511,34 @@ Check whether the given construct is a Resource.
 ###### `construct`<sup>Required</sup> <a name="construct" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.isResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
+
+---
+
+##### `fromHealthCheckId` <a name="fromHealthCheckId" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.fromHealthCheckId"></a>
+
+```typescript
+import { CalculatedHealthCheck } from '@pepperize/cdk-route53-health-check'
+
+CalculatedHealthCheck.fromHealthCheckId(scope: Construct, id: string, healthCheckId: string)
+```
+
+Import an existing Route53 HealthCheck.
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.fromHealthCheckId.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### `id`<sup>Required</sup> <a name="id" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.fromHealthCheckId.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `healthCheckId`<sup>Required</sup> <a name="healthCheckId" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.fromHealthCheckId.parameter.healthCheckId"></a>
+
+- *Type:* string
 
 ---
 
@@ -774,6 +832,7 @@ Valid statistics: Average (recommended), Minimum, Maximum
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.fromHealthCheckId">fromHealthCheckId</a></code> | Import an existing Route53 HealthCheck. |
 
 ---
 
@@ -824,6 +883,34 @@ Check whether the given construct is a Resource.
 ###### `construct`<sup>Required</sup> <a name="construct" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.isResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
+
+---
+
+##### `fromHealthCheckId` <a name="fromHealthCheckId" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.fromHealthCheckId"></a>
+
+```typescript
+import { EndpointHealthCheck } from '@pepperize/cdk-route53-health-check'
+
+EndpointHealthCheck.fromHealthCheckId(scope: Construct, id: string, healthCheckId: string)
+```
+
+Import an existing Route53 HealthCheck.
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.fromHealthCheckId.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### `id`<sup>Required</sup> <a name="id" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.fromHealthCheckId.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `healthCheckId`<sup>Required</sup> <a name="healthCheckId" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.fromHealthCheckId.parameter.healthCheckId"></a>
+
+- *Type:* string
 
 ---
 
@@ -1385,65 +1472,6 @@ The regions of health checker from which Route53 performs checks on the endpoint
 
 
 ##### `SA_EAST_1` <a name="SA_EAST_1" id="@pepperize/cdk-route53-health-check.HealthCheckerRegions.SA_EAST_1"></a>
-
----
-
-
-### HealthCheckType <a name="HealthCheckType" id="@pepperize/cdk-route53-health-check.HealthCheckType"></a>
-
-The type of health check to create.
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckType.HTTP">HTTP</a></code> | *No description.* |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckType.HTTPS">HTTPS</a></code> | *No description.* |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckType.HTTP_STR_MATCH">HTTP_STR_MATCH</a></code> | *No description.* |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckType.HTTPS_STR_MATCH">HTTPS_STR_MATCH</a></code> | *No description.* |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckType.TCP">TCP</a></code> | *No description.* |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckType.CALCULATED">CALCULATED</a></code> | *No description.* |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckType.CLOUDWATCH_METRIC">CLOUDWATCH_METRIC</a></code> | *No description.* |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckType.RECOVERY_CONTROL">RECOVERY_CONTROL</a></code> | *No description.* |
-
----
-
-##### `HTTP` <a name="HTTP" id="@pepperize/cdk-route53-health-check.HealthCheckType.HTTP"></a>
-
----
-
-
-##### `HTTPS` <a name="HTTPS" id="@pepperize/cdk-route53-health-check.HealthCheckType.HTTPS"></a>
-
----
-
-
-##### `HTTP_STR_MATCH` <a name="HTTP_STR_MATCH" id="@pepperize/cdk-route53-health-check.HealthCheckType.HTTP_STR_MATCH"></a>
-
----
-
-
-##### `HTTPS_STR_MATCH` <a name="HTTPS_STR_MATCH" id="@pepperize/cdk-route53-health-check.HealthCheckType.HTTPS_STR_MATCH"></a>
-
----
-
-
-##### `TCP` <a name="TCP" id="@pepperize/cdk-route53-health-check.HealthCheckType.TCP"></a>
-
----
-
-
-##### `CALCULATED` <a name="CALCULATED" id="@pepperize/cdk-route53-health-check.HealthCheckType.CALCULATED"></a>
-
----
-
-
-##### `CLOUDWATCH_METRIC` <a name="CLOUDWATCH_METRIC" id="@pepperize/cdk-route53-health-check.HealthCheckType.CLOUDWATCH_METRIC"></a>
-
----
-
-
-##### `RECOVERY_CONTROL` <a name="RECOVERY_CONTROL" id="@pepperize/cdk-route53-health-check.HealthCheckType.RECOVERY_CONTROL"></a>
 
 ---
 

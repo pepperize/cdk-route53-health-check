@@ -104,11 +104,16 @@ See for more options [API Reference - EndpointHealthCheckProps](https://github.c
 ### Create a Route53 HealthCheck to monitor other HealthChecks
 
 ```typescript
-const endpointHealthCheck = new EndpointHealthCheck(stack, "HealthCheck", {
+const healthCheck1 = new EndpointHealthCheck(stack, "HealthCheck1", {
   domainName: "pepperize.com",
 });
+const healthCheck2 = EndpointHealthCheck.fromHealthCheckId(
+  stack,
+  "HealthCheck2",
+  "9ebee2db-6292-4803-9838-327e6example"
+);
 new CalculatedHealthCheck(stack, "CalculatedHealthCheck", {
-  childHealthChecks: [healthCheck],
+  childHealthChecks: [healthCheck1, healthCheck2],
 });
 ```
 

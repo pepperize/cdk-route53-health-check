@@ -25,9 +25,11 @@ describe("CalculatedHealthCheck", () => {
   it("Should have resource", () => {
     // Given
     const stack = new Stack();
-    const endpointHealthCheck = new EndpointHealthCheck(stack, "EndpointHealthCheck", {
-      domainName: "pepperize.com",
-    });
+    const endpointHealthCheck = EndpointHealthCheck.fromHealthCheckId(
+      stack,
+      "EndpointHealthCheck",
+      "9ebee2db-6292-4803-9838-327e6example"
+    );
     const calculatedHealthCheck = new CalculatedHealthCheck(stack, "CalculatedHealthCheck", {
       healthCheckName: "calculated",
       childHealthChecks: [],
@@ -52,7 +54,7 @@ describe("CalculatedHealthCheck", () => {
         },
       ],
     });
-    expect(capture.asArray()).toHaveLength(1);
+    expect(capture.asArray()).toEqual(["9ebee2db-6292-4803-9838-327e6example"]);
     annotations.hasNoError("/Default/CalculatedHealthCheck", "*");
   });
   it("Should have errors", () => {

@@ -1,5 +1,6 @@
 import { ITaggable, Resource, TagManager, TagType } from "aws-cdk-lib";
 import * as cloudwatch from "aws-cdk-lib/aws-cloudwatch";
+import { Construct } from "constructs";
 
 /**
  * @internal
@@ -32,6 +33,18 @@ export interface IHealthCheck {
  * @internal
  */
 export abstract class HealthCheckBase extends Resource implements IHealthCheck, ITaggable {
+  /**
+   * Import an existing Route53 HealthCheck.
+   */
+  public static fromHealthCheckId(scope: Construct, id: string, healthCheckId: string): IHealthCheck {
+    return new (class Imported extends HealthCheckBase {
+      public readonly healthCheckId = healthCheckId;
+      constructor() {
+        super(scope, id);
+      }
+    })();
+  }
+
   public abstract readonly healthCheckId: string;
 
   readonly tags = new TagManager(TagType.STANDARD, "AWS::Route53::HealthCheck");
@@ -57,6 +70,8 @@ export abstract class HealthCheckBase extends Resource implements IHealthCheck, 
 
 /**
  * The type of health check to create.
+ *
+ * @internal
  */
 export enum HealthCheckType {
   HTTP = "HTTP",
