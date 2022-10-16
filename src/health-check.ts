@@ -2,8 +2,17 @@ import { ITaggable, TagManager, TagType } from "aws-cdk-lib";
 import * as cloudwatch from "aws-cdk-lib/aws-cloudwatch";
 import { Construct } from "constructs";
 
+/**
+ * @internal
+ */
 export interface HealthCheckOptions {
+  /**
+   * The display name of this Route53 HealthCheck
+   */
   readonly healthCheckName?: string;
+  /**
+   * Whether to invert the status of the Route53 health check status.
+   */
   readonly inverted?: boolean;
 }
 

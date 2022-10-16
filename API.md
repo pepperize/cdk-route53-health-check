@@ -246,11 +246,11 @@ const endpointHealthCheckProps: EndpointHealthCheckProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.healthCheckName">healthCheckName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.inverted">inverted</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.domainName">domainName</a></code> | <code>string</code> | The domain name that Route53 performs health checks on. Route53 resolves the IP address and performs the lookup. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.enableSni">enableSni</a></code> | <code>boolean</code> | Specify that Route53 sends the host name for TLS negotiation. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.failureThreshold">failureThreshold</a></code> | <code>number</code> | The number of consecutive health checks that an endpoint must pass or fail for Route53 to change the current status of the endpoint between healthy and unhealthy. |
+| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.healthCheckName">healthCheckName</a></code> | <code>string</code> | The display name of this Route53 HealthCheck. |
+| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.inverted">inverted</a></code> | <code>boolean</code> | Whether to invert the status of the Route53 health check status. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.ipAddress">ipAddress</a></code> | <code>string</code> | The ip address that Route53 performs health checks on. Optionally a domain name may be given. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.latencyGraphs">latencyGraphs</a></code> | <code>boolean</code> | Whether Route53 measures the latency between health checkers in multiple AWS regions and your endpoint, and displays a CloudWatch latency graphs in the Route53 console. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.port">port</a></code> | <code>number</code> | The port that Route53 performs health checks. |
@@ -259,26 +259,6 @@ const endpointHealthCheckProps: EndpointHealthCheckProps = { ... }
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.requestInterval">requestInterval</a></code> | <code>number</code> | The number of seconds between the time that Route53 gets a response from your endpoint and the time that it sends the next health check request. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.resourcePath">resourcePath</a></code> | <code>string</code> | The path for HTTP or HTTPS health checks. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.searchString">searchString</a></code> | <code>string</code> | The search string for HTTP or HTTPS health checks. |
-
----
-
-##### `healthCheckName`<sup>Optional</sup> <a name="healthCheckName" id="@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.healthCheckName"></a>
-
-```typescript
-public readonly healthCheckName: string;
-```
-
-- *Type:* string
-
----
-
-##### `inverted`<sup>Optional</sup> <a name="inverted" id="@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.inverted"></a>
-
-```typescript
-public readonly inverted: boolean;
-```
-
-- *Type:* boolean
 
 ---
 
@@ -322,6 +302,30 @@ public readonly failureThreshold: number;
 The number of consecutive health checks that an endpoint must pass or fail for Route53 to change the current status of the endpoint between healthy and unhealthy.
 
 Provide a number between 1 and 10.
+
+---
+
+##### `healthCheckName`<sup>Optional</sup> <a name="healthCheckName" id="@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.healthCheckName"></a>
+
+```typescript
+public readonly healthCheckName: string;
+```
+
+- *Type:* string
+
+The display name of this Route53 HealthCheck.
+
+---
+
+##### `inverted`<sup>Optional</sup> <a name="inverted" id="@pepperize/cdk-route53-health-check.EndpointHealthCheckProps.property.inverted"></a>
+
+```typescript
+public readonly inverted: boolean;
+```
+
+- *Type:* boolean
+
+Whether to invert the status of the Route53 health check status.
 
 ---
 
@@ -438,45 +442,6 @@ public readonly searchString: string;
 The search string for HTTP or HTTPS health checks.
 
 Route53 will search in the response body. Provide a string between 1 and 255 length.
-
----
-
-### HealthCheckOptions <a name="HealthCheckOptions" id="@pepperize/cdk-route53-health-check.HealthCheckOptions"></a>
-
-#### Initializer <a name="Initializer" id="@pepperize/cdk-route53-health-check.HealthCheckOptions.Initializer"></a>
-
-```typescript
-import { HealthCheckOptions } from '@pepperize/cdk-route53-health-check'
-
-const healthCheckOptions: HealthCheckOptions = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckOptions.property.healthCheckName">healthCheckName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@pepperize/cdk-route53-health-check.HealthCheckOptions.property.inverted">inverted</a></code> | <code>boolean</code> | *No description.* |
-
----
-
-##### `healthCheckName`<sup>Optional</sup> <a name="healthCheckName" id="@pepperize/cdk-route53-health-check.HealthCheckOptions.property.healthCheckName"></a>
-
-```typescript
-public readonly healthCheckName: string;
-```
-
-- *Type:* string
-
----
-
-##### `inverted`<sup>Optional</sup> <a name="inverted" id="@pepperize/cdk-route53-health-check.HealthCheckOptions.property.inverted"></a>
-
-```typescript
-public readonly inverted: boolean;
-```
-
-- *Type:* boolean
 
 ---
 
