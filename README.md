@@ -105,22 +105,20 @@ Resources:
 **complete configuration**
 
 ```typescript
-import { HealthCheckerRegions } from "./endpoint-health-check";
-
 new EndpointHealthCheck(scope, "HealthCheck", {
-  domainName: "pepperize.com", //	The domain name that Route53 performs health checks on. Route53 resolves the IP address and performs the lookup.
-  enableSni: true, //	Specify that Route53 sends the host name for TLS negotiation.
-  failureThreshold: 3, //	The number of consecutive health checks that an endpoint must pass or fail for Route53 to change the current status of the endpoint between healthy and unhealthy.
+  domainName: "pepperize.com", // The domain name that Route53 performs health checks on. Route53 resolves the IP address and performs the lookup.
+  enableSni: true, // Specify that Route53 sends the host name for TLS negotiation.
+  failureThreshold: 3, // The number of consecutive health checks that an endpoint must pass or fail for Route53 to change the current status of the endpoint between healthy and unhealthy.
   healthCheckName: "pepperize.com", //	The display name of this Route53 HealthCheck.
-  inverted: false, //	Whether to invert the status of the Route53 health check status.
-  ipAddress: "1.1.1.1", //	The ip address that Route53 performs health checks on. Optionally a domain name may be given.
-  latencyGraphs: true, //	Whether Route53 measures the latency between health checkers in multiple AWS regions and your endpoint, and displays a CloudWatch latency graphs in the Route53 console.
-  port: 443, //	The port that Route53 performs health checks.
-  protocol: Protocol.HTTPS, //	The protocol that Route53 uses to communicate with the endpoint.
-  regions: [HealthCheckerRegions.EU_WEST_1, HealthCheckerRegions.US_EAST_1, HealthCheckerRegions.US_WEST_1], //	The list of regions from which Route53 health checkers check the endpoint.
-  requestInterval: 30, //	The number of seconds between the time that Route53 gets a response from your endpoint and the time that it sends the next health check request.
-  resourcePath: "/health-check", //	The path for HTTP or HTTPS health checks.
-  searchString: "OK", //	The search string for HTTP or HTTPS health checks.
+  inverted: false, // Whether to invert the status of the Route53 health check status.
+  ipAddress: "1.1.1.1", // The ip address that Route53 performs health checks on. Optionally a domain name may be given.
+  latencyGraphs: true, // Whether Route53 measures the latency between health checkers in multiple AWS regions and your endpoint, and displays a CloudWatch latency graphs in the Route53 console.
+  port: 443, // The port that Route53 performs health checks.
+  protocol: Protocol.HTTPS, // The protocol that Route53 uses to communicate with the endpoint.
+  regions: [HealthCheckerRegions.EU_WEST_1, HealthCheckerRegions.US_EAST_1, HealthCheckerRegions.US_WEST_1], // The list of regions from which Route53 health checkers check the endpoint.
+  requestInterval: 30, // The number of seconds between the time that Route53 gets a response from your endpoint and the time that it sends the next health check request.
+  resourcePath: "/health-check", // The path for HTTP or HTTPS health checks.
+  searchString: "OK", // The search string for HTTP or HTTPS health checks.
 });
 ```
 
