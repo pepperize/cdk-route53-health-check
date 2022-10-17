@@ -60,6 +60,9 @@ new AlarmHealthCheck(scope: Construct, id: string, props: AlarmHealthCheckProps)
 | --- | --- |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.failover">failover</a></code> | Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet. |
+| <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.failoverPrimary">failoverPrimary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
+| <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.failoverSecondary">failoverSecondary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.metric">metric</a></code> | Return the given named metric for this HealthCheck. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.metricHealthCheckStatus">metricHealthCheckStatus</a></code> | Route53 health checkers report that the HealthCheck is healthy or unhealthy. |
 
@@ -92,6 +95,78 @@ account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 ###### `policy`<sup>Required</sup> <a name="policy" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.applyRemovalPolicy.parameter.policy"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+##### `failover` <a name="failover" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failover"></a>
+
+```typescript
+public failover(recordSet: RecordSet, evaluateTargetHealth?: boolean, failover?: Failover): void
+```
+
+Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failover.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failover.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
+
+---
+
+###### `failover`<sup>Optional</sup> <a name="failover" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failover.parameter.failover"></a>
+
+- *Type:* <a href="#@pepperize/cdk-route53-health-check.Failover">Failover</a>
+
+---
+
+##### `failoverPrimary` <a name="failoverPrimary" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failoverPrimary"></a>
+
+```typescript
+public failoverPrimary(recordSet: RecordSet, evaluateTargetHealth?: boolean): void
+```
+
+Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failoverPrimary.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failoverPrimary.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
+
+---
+
+##### `failoverSecondary` <a name="failoverSecondary" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failoverSecondary"></a>
+
+```typescript
+public failoverSecondary(recordSet: RecordSet, evaluateTargetHealth?: boolean): void
+```
+
+Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failoverSecondary.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.failoverSecondary.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
 
 ---
 
@@ -355,6 +430,9 @@ new CalculatedHealthCheck(scope: Construct, id: string, props: CalculatedHealthC
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.addChildHealthCheck">addChildHealthCheck</a></code> | *No description.* |
+| <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failover">failover</a></code> | Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet. |
+| <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failoverPrimary">failoverPrimary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
+| <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failoverSecondary">failoverSecondary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.metric">metric</a></code> | Return the given named metric for this HealthCheck. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.metricChildHealthCheckHealthyCount">metricChildHealthCheckHealthyCount</a></code> | The number of ChildHealthChecks that are healthy that Route53 is monitoring. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.metricHealthCheckStatus">metricHealthCheckStatus</a></code> | Route53 health checkers report that the HealthCheck is healthy or unhealthy. |
@@ -400,6 +478,78 @@ public addChildHealthCheck(healthCheck: IHealthCheck): void
 ###### `healthCheck`<sup>Required</sup> <a name="healthCheck" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.addChildHealthCheck.parameter.healthCheck"></a>
 
 - *Type:* <a href="#@pepperize/cdk-route53-health-check.IHealthCheck">IHealthCheck</a>
+
+---
+
+##### `failover` <a name="failover" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failover"></a>
+
+```typescript
+public failover(recordSet: RecordSet, evaluateTargetHealth?: boolean, failover?: Failover): void
+```
+
+Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failover.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failover.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
+
+---
+
+###### `failover`<sup>Optional</sup> <a name="failover" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failover.parameter.failover"></a>
+
+- *Type:* <a href="#@pepperize/cdk-route53-health-check.Failover">Failover</a>
+
+---
+
+##### `failoverPrimary` <a name="failoverPrimary" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failoverPrimary"></a>
+
+```typescript
+public failoverPrimary(recordSet: RecordSet, evaluateTargetHealth?: boolean): void
+```
+
+Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failoverPrimary.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failoverPrimary.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
+
+---
+
+##### `failoverSecondary` <a name="failoverSecondary" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failoverSecondary"></a>
+
+```typescript
+public failoverSecondary(recordSet: RecordSet, evaluateTargetHealth?: boolean): void
+```
+
+Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failoverSecondary.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failoverSecondary.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
 
 ---
 
@@ -686,6 +836,9 @@ new EndpointHealthCheck(scope: Construct, id: string, props: EndpointHealthCheck
 | --- | --- |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.failover">failover</a></code> | Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet. |
+| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.failoverPrimary">failoverPrimary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
+| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.failoverSecondary">failoverSecondary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.metric">metric</a></code> | Return the given named metric for this HealthCheck. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.metricConnectionTime">metricConnectionTime</a></code> | The time in milliseconds that it took Route53 health checkers to establish a TCP connection with the endpoint. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.metricHealthCheckPercentageHealthy">metricHealthCheckPercentageHealthy</a></code> | The percentage of Route53 health checkers that report that the status of the health check is healthy. |
@@ -722,6 +875,78 @@ account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 ###### `policy`<sup>Required</sup> <a name="policy" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.applyRemovalPolicy.parameter.policy"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+##### `failover` <a name="failover" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failover"></a>
+
+```typescript
+public failover(recordSet: RecordSet, evaluateTargetHealth?: boolean, failover?: Failover): void
+```
+
+Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failover.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failover.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
+
+---
+
+###### `failover`<sup>Optional</sup> <a name="failover" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failover.parameter.failover"></a>
+
+- *Type:* <a href="#@pepperize/cdk-route53-health-check.Failover">Failover</a>
+
+---
+
+##### `failoverPrimary` <a name="failoverPrimary" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failoverPrimary"></a>
+
+```typescript
+public failoverPrimary(recordSet: RecordSet, evaluateTargetHealth?: boolean): void
+```
+
+Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failoverPrimary.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failoverPrimary.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
+
+---
+
+##### `failoverSecondary` <a name="failoverSecondary" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failoverSecondary"></a>
+
+```typescript
+public failoverSecondary(recordSet: RecordSet, evaluateTargetHealth?: boolean): void
+```
+
+Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failoverSecondary.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.failoverSecondary.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
 
 ---
 
@@ -1358,8 +1583,103 @@ Route53 will search in the response body. Provide a string between 1 and 255 len
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@pepperize/cdk-route53-health-check.IHealthCheck.failover">failover</a></code> | Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet. |
+| <code><a href="#@pepperize/cdk-route53-health-check.IHealthCheck.failoverPrimary">failoverPrimary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
+| <code><a href="#@pepperize/cdk-route53-health-check.IHealthCheck.failoverSecondary">failoverSecondary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
 | <code><a href="#@pepperize/cdk-route53-health-check.IHealthCheck.metric">metric</a></code> | Return the given named metric for this HealthCheck. |
 | <code><a href="#@pepperize/cdk-route53-health-check.IHealthCheck.metricHealthCheckStatus">metricHealthCheckStatus</a></code> | Route53 health checkers report that the HealthCheck is healthy or unhealthy. |
+
+---
+
+##### `failover` <a name="failover" id="@pepperize/cdk-route53-health-check.IHealthCheck.failover"></a>
+
+```typescript
+public failover(recordSet: RecordSet, evaluateTargetHealth?: boolean, failover?: Failover): void
+```
+
+Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth)
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.IHealthCheck.failover.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+The Route53 RecordSet to configure failover.
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.IHealthCheck.failover.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
+
+Inherit the health of the referenced Alias RecordSet Target.
+
+---
+
+###### `failover`<sup>Optional</sup> <a name="failover" id="@pepperize/cdk-route53-health-check.IHealthCheck.failover.parameter.failover"></a>
+
+- *Type:* <a href="#@pepperize/cdk-route53-health-check.Failover">Failover</a>
+
+Sets `PRIMARY` or `SECONDARY` as the value for `Failover` on the given RecordSet.
+
+---
+
+##### `failoverPrimary` <a name="failoverPrimary" id="@pepperize/cdk-route53-health-check.IHealthCheck.failoverPrimary"></a>
+
+```typescript
+public failoverPrimary(recordSet: RecordSet, evaluateTargetHealth?: boolean): void
+```
+
+Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth)
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.IHealthCheck.failoverPrimary.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+The Route53 RecordSet to configure failover.
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.IHealthCheck.failoverPrimary.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
+
+Inherit the health of the referenced Alias RecordSet Target.
+
+---
+
+##### `failoverSecondary` <a name="failoverSecondary" id="@pepperize/cdk-route53-health-check.IHealthCheck.failoverSecondary"></a>
+
+```typescript
+public failoverSecondary(recordSet: RecordSet, evaluateTargetHealth?: boolean): void
+```
+
+Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`.
+
+<b>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets</b>
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth)
+
+###### `recordSet`<sup>Required</sup> <a name="recordSet" id="@pepperize/cdk-route53-health-check.IHealthCheck.failoverSecondary.parameter.recordSet"></a>
+
+- *Type:* aws-cdk-lib.aws_route53.RecordSet
+
+The Route53 RecordSet to configure failover.
+
+---
+
+###### `evaluateTargetHealth`<sup>Optional</sup> <a name="evaluateTargetHealth" id="@pepperize/cdk-route53-health-check.IHealthCheck.failoverSecondary.parameter.evaluateTargetHealth"></a>
+
+- *Type:* boolean
+
+Inherit the health of the referenced Alias RecordSet Target.
 
 ---
 
@@ -1416,6 +1736,31 @@ public readonly healthCheckId: string;
 ---
 
 ## Enums <a name="Enums" id="Enums"></a>
+
+### Failover <a name="Failover" id="@pepperize/cdk-route53-health-check.Failover"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@pepperize/cdk-route53-health-check.Failover.PRIMARY">PRIMARY</a></code> | The primary record set. |
+| <code><a href="#@pepperize/cdk-route53-health-check.Failover.SECONDARY">SECONDARY</a></code> | The secondary record set. |
+
+---
+
+##### `PRIMARY` <a name="PRIMARY" id="@pepperize/cdk-route53-health-check.Failover.PRIMARY"></a>
+
+The primary record set.
+
+---
+
+
+##### `SECONDARY` <a name="SECONDARY" id="@pepperize/cdk-route53-health-check.Failover.SECONDARY"></a>
+
+The secondary record set.
+
+---
+
 
 ### HealthCheckerRegions <a name="HealthCheckerRegions" id="@pepperize/cdk-route53-health-check.HealthCheckerRegions"></a>
 

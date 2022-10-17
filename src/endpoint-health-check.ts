@@ -2,7 +2,8 @@ import { Annotations, Tags } from "aws-cdk-lib";
 import * as cloudwatch from "aws-cdk-lib/aws-cloudwatch";
 import * as route53 from "aws-cdk-lib/aws-route53";
 import { Construct } from "constructs";
-import { HealthCheckBase, HealthCheckOptions, HealthCheckType } from "./health-check";
+import { HealthCheckBase, HealthCheckOptions } from "./health-check";
+import { HealthCheckType } from "./health-check-type";
 
 export interface EndpointHealthCheckProps extends HealthCheckOptions {
   /**
@@ -95,6 +96,8 @@ export interface EndpointHealthCheckProps extends HealthCheckOptions {
  *       EnableSNI: true
  * ```
  * @link https://docs.aws.amazon.com/de_de/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#aws-resource-route53-healthcheck-properties
+ *
+ * @resource AWS::Route53::HealthCheck
  */
 export class EndpointHealthCheck extends HealthCheckBase {
   public readonly healthCheckId: string;
