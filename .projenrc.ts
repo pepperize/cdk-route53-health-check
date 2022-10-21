@@ -23,7 +23,7 @@ const project = new AwsCdkConstructLibrary({
 
   projenrcTs: true,
 
-  devDeps: ["@pepperize/projen-awscdk-construct@latest"],
+  devDeps: ["@pepperize/projen-awscdk-construct@latest", "aws-cdk"],
 
   defaultReleaseBranch: "main",
   releaseToNpm: true,
@@ -46,7 +46,12 @@ const project = new AwsCdkConstructLibrary({
   gitpod: true,
 });
 
-project.gitignore.exclude("cdk.out/");
+project.gitignore.exclude("cdk.out/", "diagram.dot");
+
+const diagramTask = project.addTask("diagram", {
+  exec: "npx cdk-dia --target-path diagram.png",
+});
+diagramTask.prependExec("npx cdk synth --app 'npx ts-node -P tsconfig.json --prefer-ts-exts ./src/integ.default.ts'");
 
 project.gitpod?.addCustomTask({
   name: "setup",

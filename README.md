@@ -102,7 +102,7 @@ Resources:
       EnableSNI: true
 ```
 
-**complete configuration**
+**Additional configuration options**
 
 ```typescript
 new EndpointHealthCheck(scope, "HealthCheck", {
@@ -160,6 +160,8 @@ See for more options [API Reference - AlarmHealthCheckProps](https://github.com/
 ### Configuring DNS Failover
 
 An example active-passive DNS failover configuration
+
+![DNS failover](https://github.com/pepperize/cdk-route53-health-check/blob/main/diagram.png)
 
 **Primary**
 

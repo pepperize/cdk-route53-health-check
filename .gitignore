@@ -59,3 +59,4 @@ tsconfig.json
 .vscode/
 !/.editorconfig
 cdk.out/
+diagram.dot
