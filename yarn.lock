@@ -653,9 +653,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.297"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.297.tgz#3414d8cd11d85b8bc9b1ec4502e19cf6a720e4f7"
-  integrity sha512-0kqirfMkw4CreiQNob2N1m8uh9q9CG7C2Nduz87HPpEcKCDH7OK8kF5ZhdTr9DrlLt2y6bmQnIM6XmhXsTWvDw==
+  version "0.0.301"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.301.tgz#9db2dbbe7620ac943d80bb24e96f8908cef4e912"
+  integrity sha512-8I5km0pK6z8JN30cGvobzyDIQNmyh3/6ae1DkpyxsSHLjb/wRtt3cuOR8ol0Vd/YpiRSl8x0GFytusxR1zySIg==
   dependencies:
     projen "^0.63.14"
 
@@ -3494,14 +3494,14 @@ jsesc@^2.5.1:
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
 jsii-diff@^1.69.0:
-  version "1.70.0"
-  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.70.0.tgz#67c67f713401d82799b52d997d104f20f74d4f75"
-  integrity sha512-of9otOfqkK/nAX7YwGu7OCifbXVkm2KvIvuMCotfAa8lqpiFnXJOi1On52mT8Vx31op74Mn15RLAO/k8DsFgzA==
+  version "1.71.0"
+  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.71.0.tgz#9a3bd3c33b62ac09d762397c0f91b284601f71fe"
+  integrity sha512-v/HpJR33QZEf1nWlxoKUKfk23xkwgQQwcXN16xcLFB56WWoa1q6KA23YoAPn+FvsBzGhBqIdKv/2wRo/ZttkXw==
   dependencies:
-    "@jsii/check-node" "1.70.0"
-    "@jsii/spec" "^1.70.0"
+    "@jsii/check-node" "1.71.0"
+    "@jsii/spec" "^1.71.0"
     fs-extra "^10.1.0"
-    jsii-reflect "^1.70.0"
+    jsii-reflect "^1.71.0"
     log4js "^6.7.0"
     yargs "^16.2.0"
 
@@ -3568,32 +3568,13 @@ jsii-rosetta@^1.71.0:
     workerpool "^6.3.0"
     yargs "^16.2.0"
 
-jsii@1.71.0:
+jsii@1.71.0, jsii@^1.69.0:
   version "1.71.0"
   resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.71.0.tgz#f1725de3c89462745970b6b0c9c475c2c8580554"
   integrity sha512-Dn6TvKgMNEsMU/WKliSbVs93Cno238LZZeJTNXk9L6vOR3d7jjEsWh7PJ7NhdyZeft2M3RFJQDKhg8eKeKM/4g==
   dependencies:
     "@jsii/check-node" "1.71.0"
     "@jsii/spec" "^1.71.0"
-    case "^1.6.3"
-    chalk "^4"
-    fast-deep-equal "^3.1.3"
-    fs-extra "^10.1.0"
-    log4js "^6.7.0"
-    semver "^7.3.8"
-    semver-intersect "^1.4.0"
-    sort-json "^2.0.1"
-    spdx-license-list "^6.6.0"
-    typescript "~3.9.10"
-    yargs "^16.2.0"
-
-jsii@^1.69.0:
-  version "1.70.0"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.70.0.tgz#ad5265f9d5a2f02c212deae987c2fe4426e8f73f"
-  integrity sha512-RDr/D6IPhCpx5A53qIS99rtwMlDVbjt5F0frCmgalXs2DNiqIm2C8OTUGToVQUrCbX1Lx8eZBmsYWLxG0bQLcg==
-  dependencies:
-    "@jsii/check-node" "1.70.0"
-    "@jsii/spec" "^1.70.0"
     case "^1.6.3"
     chalk "^4"
     fast-deep-equal "^3.1.3"
