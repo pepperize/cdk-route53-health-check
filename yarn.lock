@@ -645,9 +645,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.361"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.361.tgz#3a6691e856d4910b63b8592ac36c8113ae2505c1"
-  integrity sha512-bpwcI1UaStcqSwk69GRoegqCWkGDdkKiTUnTyPSCXpHW7fjsogir+xF6LCvDN3YKThOm82JfC/RpndUs1Ud0og==
+  version "0.0.362"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.362.tgz#b27481257a6eaee1431e058a639ee709146fe63a"
+  integrity sha512-i6+5FCylR7mH/WfLBbUJPYGKxP3Bw+weFhuTc0PVs5d0JyqxfMGdsDPyFiFjQ0+WsNhU4VaHrGojszWR4VfbRA==
   dependencies:
     projen "^0.65.25"
 
@@ -1123,9 +1123,9 @@ aws-cdk-lib@2.46.0:
     yaml "1.10.2"
 
 aws-cdk@^2.47.0:
-  version "2.57.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.57.0.tgz#2de54ce40074c05b7760d0505588307e1d7a2ae7"
-  integrity sha512-9tS2ht8su7kLmYLcOumfjTulGlHS2zBToi6f4z/LoIBYTwx4WbBguZhhGRvdtfEx8HLoMUgwC14P/IwSysuxmQ==
+  version "2.58.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.58.0.tgz#9fcb92f7efbcb325a64945225e682c1c4fb81968"
+  integrity sha512-KsxneIFvgxSbpdZboIPffXBkxSay2sSrGjfloVAf+n0Rdouv6JA02vdVF9whE5ZYClSo19MfdPdbsfuzhVqAaw==
   optionalDependencies:
     fsevents "2.3.2"
 
