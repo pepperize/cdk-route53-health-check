@@ -653,9 +653,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.427"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.427.tgz#87bd3aea2ad99c40a4060b9810f024f5de809f9e"
-  integrity sha512-gxq7HUSxZ10jjpo+MZQTI3x5n8ogyQG67xNRrdNciaVWeOxGlbzB0idYHMF/ks0KwTHsII1/2jFdEeFwJBCF1A==
+  version "0.0.429"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.429.tgz#1e7dc6dcadd5463586f36501afa2ba5353d85f97"
+  integrity sha512-MkepXOq4itQ61jBZ5xh8FzcC091NHNiq2996DVXh3ENTcjDHs0JMxSY155V0KjpQXvpysONv2rMDfKPaeJtUqg==
   dependencies:
     projen "^0.65.25"
 
@@ -1147,9 +1147,9 @@ aws-cdk-lib@2.46.0:
     yaml "1.10.2"
 
 aws-cdk@^2.47.0:
-  version "2.64.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.64.0.tgz#8dd6561c678053852ab16851292d7a2023f53bd9"
-  integrity sha512-iXkvVeYKt6Glboeicrb3QxC6K6o25+zitM/UTfgVzDlKEvC4hwQp1KqXy/caN7SfA6X2N0LJmXfC99T4cvIH0A==
+  version "2.65.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.65.0.tgz#ffa96a11fdf3750b1f3b0501b5c8dd01d483034d"
+  integrity sha512-a1xtdf95N7MLPcwCs+IkE6kCD1utLMuDh+1RIyYbX7SYzAjlNJzOXQ7M16kBktt4KflVWseZnYsGbKWJ2DraMw==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -3480,29 +3480,29 @@ jsesc@^2.5.1:
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
 jsii-diff@^1.69.0:
-  version "1.74.0"
-  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.74.0.tgz#d7e6f94d4c34a74604a74ba204bc6effba7a13a0"
-  integrity sha512-lMKRnfaJLQywsudp4PIgBDLFsBFSWVxTrvVa2xlNuIOsU2CP87ljX7SonzPNvnwJccBN4nJ1cpJCGTtGNo6xKQ==
+  version "1.75.0"
+  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.75.0.tgz#d4b02e8ed16aa07e0ac618fa90792ff99d5e73f0"
+  integrity sha512-4MRc2ikiTHs3kKMFjcvwSeLjDMTRVQ5+ImgU8+NvfdmMANkP7DG6tbKotZy6Jz2/Afnu2PtSKXlnLBKHNMFmfg==
   dependencies:
-    "@jsii/check-node" "1.74.0"
-    "@jsii/spec" "^1.74.0"
+    "@jsii/check-node" "1.75.0"
+    "@jsii/spec" "^1.75.0"
     fs-extra "^10.1.0"
-    jsii-reflect "^1.74.0"
+    jsii-reflect "^1.75.0"
     log4js "^6.7.1"
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.114:
-  version "7.0.233"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.233.tgz#ee30f4c958c34346afa65e32850f2675c16b206a"
-  integrity sha512-mBVurbAT+Qf7x2HcXiVEuDwhLWo+hVR/I+AtNV1GCpV4YP+DL3bVU0tXM8+hgv7kYuSt//sTR7hL6MMUT4OUxA==
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.0.tgz#335c44f270dc0bfd7ea634ef30a7c06ba25e986e"
+  integrity sha512-7k90mHani3yNr2U/Gx2JBrgke3p2pp0qnNesb9gwoVj7mNgzUmWdssDy9dz+4GA+JqzAV0eI4mIJcEOvwzzN8w==
   dependencies:
-    "@jsii/spec" "^1.74.0"
+    "@jsii/spec" "^1.75.0"
     case "^1.6.3"
     fs-extra "^10.1.0"
     glob "^7.2.3"
     glob-promise "^3.4.0"
-    jsii-reflect "^1.74.0"
-    jsii-rosetta "^1.74.0"
+    jsii-reflect "^1.75.0"
+    jsii-rosetta "^1.75.0"
     semver "^7.3.8"
     yargs "^16.2.0"
 
@@ -3525,7 +3525,7 @@ jsii-pacmak@^1.69.0:
     xmlbuilder "^15.1.1"
     yargs "^16.2.0"
 
-jsii-reflect@^1.74.0, jsii-reflect@^1.75.0:
+jsii-reflect@^1.75.0:
   version "1.75.0"
   resolved "https://registry.yarnpkg.com/jsii-reflect/-/jsii-reflect-1.75.0.tgz#136564eb8ec9a94a9fe218e3d275e80196cd6285"
   integrity sha512-oB8X2MpLZbpl8T7XfD+jSADLjzhEMnCZH8BSY3hxSH8TGdhMUZriFHFgmz1NshkZXDh0zRz+xF2a8+uqEIKRYw==
@@ -3537,7 +3537,7 @@ jsii-reflect@^1.74.0, jsii-reflect@^1.75.0:
     oo-ascii-tree "^1.75.0"
     yargs "^16.2.0"
 
-jsii-rosetta@^1.74.0, jsii-rosetta@^1.75.0:
+jsii-rosetta@^1.75.0:
   version "1.75.0"
   resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-1.75.0.tgz#85a96669fc60f69d29409608a694ed063abcadd9"
   integrity sha512-zsV8F0BoXTvS46N1/QCwapMXamQhJKFaAIapFBWk0a4l84v+FSYOWnKbgZz+FVZEuu3VBJpxg6uKE9R9A8Hvag==
