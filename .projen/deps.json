@@ -91,10 +91,6 @@
       "type": "build"
     },
     {
-      "name": "json-schema",
-      "type": "build"
-    },
-    {
       "name": "prettier",
       "type": "build"
     },
@@ -119,6 +115,16 @@
     {
       "name": "typescript",
       "type": "build"
+    },
+    {
+      "name": "projen",
+      "version": "^0.67.74",
+      "type": "devenv"
+    },
+    {
+      "name": "@types/babel__traverse",
+      "version": "7.18.2",
+      "type": "override"
     },
     {
       "name": "@types/prettier",
