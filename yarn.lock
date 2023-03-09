@@ -1149,9 +1149,9 @@ aws-cdk-lib@2.46.0:
     yaml "1.10.2"
 
 aws-cdk@^2.67.0:
-  version "2.67.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.67.0.tgz#79c36c0f53cc27ab7375e1c6f541ec839b91adac"
-  integrity sha512-4KvMFEEznqTnpAx7cBrKt/zyJzAGXLcx4h0syd4862qic9CR0/1HzzWgwkOt9eRYKOYT44ElnCtRTIN//FBL6w==
+  version "2.68.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.68.0.tgz#30490bb1ff6b87bebd8a431e6c74336c69964618"
+  integrity sha512-r+C5M4J3C7RLiixhxsO/W9Kpb5iB0mFshyn5PXT1cGPkDbx23bnWLOab03jG7uHWIWI01DCipHQyTaeXXqvT3A==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -3490,9 +3490,9 @@ jsii-diff@^1.77.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.1.17:
-  version "7.1.19"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.19.tgz#1c40567d90141253c4d821df803429f21caa39be"
-  integrity sha512-1ZjrVMcMBIlFAAEh7y/jAoYOgwhJlnq3q61Ety/jgsqf3lOhljw8cYMZ6Ap0VE+NZYkD9XD95SOB6YYOpK4PQQ==
+  version "7.1.20"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.20.tgz#d3ea5eac1c6d32e7696615e3004e1a053a824415"
+  integrity sha512-YQB6pnS7mOQIvG1xds2EFGevYkqjI2IKwd+lrf5t8TSGbgoaovtxkQQRo5rDRBNLSD5sMhBi6io1Sk40QzoApw==
   dependencies:
     "@jsii/spec" "^1.77.0"
     case "^1.6.3"
