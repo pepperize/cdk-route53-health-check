@@ -121,4 +121,28 @@ describe("EndpointHealthCheck", () => {
 
     expect(capture.asObject()).not.toHaveProperty("InsufficientDataHealthStatus");
   });
+
+  it("Should be of type HTTPS_STR_MATCH if a searchString is specified", () => {
+    // Given
+    const stack = new Stack();
+    new EndpointHealthCheck(stack, "HealthCheck", {
+      domainName: "pepperize.com",
+      searchString: "UP",
+    });
+
+    // When
+    const template = Template.fromStack(stack);
+    const annotations = Annotations.fromStack(stack);
+
+    // Then
+    template.hasResourceProperties("AWS::Route53::HealthCheck", {
+      HealthCheckConfig: {
+        FullyQualifiedDomainName: "pepperize.com",
+        Port: 443,
+        Type: "HTTPS_STR_MATCH",
+        EnableSNI: true,
+      },
+    });
+    annotations.hasNoError("/Default/HealthCheck", "*");
+  });
 });

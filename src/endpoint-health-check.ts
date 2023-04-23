@@ -105,7 +105,8 @@ export class EndpointHealthCheck extends HealthCheckBase {
   constructor(scope: Construct, id: string, props: EndpointHealthCheckProps) {
     super(scope, id);
 
-    const type = this.healthCheckType(props.protocol, props.searchString);
+    const protocol = props.protocol || Protocol.HTTPS;
+    const type = this.healthCheckType(protocol, props.searchString);
     const port = this.defaultPort(props.port, type);
     const enableSni = this.enableSniForHttps(type, props.enableSni);
 
