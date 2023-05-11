@@ -672,9 +672,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.525"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.525.tgz#b15ff458dc9b9f9bf2fa8d78a52a70af316a347b"
-  integrity sha512-034fP7xOO34GRFfld7D0hF1ICP/xTN03aLb6kRf8oR3GIENdvLLBAp18dUmkT7t/HwsZb/kFsvAzfKBl+dP11Q==
+  version "0.0.528"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.528.tgz#226e295752e33bf530c4121b130d6ec2927011d7"
+  integrity sha512-8Zek4ixDvZjpm2n+XvHzjckQYyYjXUKIQkUE6k1oS0B1e3LJ4xrM3Y3CiWw/Y1AEVMPecwR0y7pCbToa+pYnMA==
 
 "@pkgr/utils@^2.3.1":
   version "2.3.1"
@@ -1169,9 +1169,9 @@ aws-cdk-lib@2.46.0:
     yaml "1.10.2"
 
 aws-cdk@^2.67.0:
-  version "2.78.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.78.0.tgz#ccf737a4adef7346a5167c959ff1bb7e08d82d9e"
-  integrity sha512-fDqImTHefBjr8RYduO0bQRkINYJRGKdTXABeLsaMP6Ff4qDXTymaplyvUxNSB9DlQ+oXQ/aJgqFGiIJXSr+kpg==
+  version "2.79.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.79.0.tgz#0fd339f13764eda652c2c72ce8b9f65e758b4970"
+  integrity sha512-pVOw5QBbtmSA+PQmGwSR1qbtgC0caC6+Vc6bCZM4aK9nTh7iUXv4MKqXCUfxN6waNgYpweUCb29gxo6DOe99Yw==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -3562,7 +3562,7 @@ jsii-rosetta@^1.80.0, jsii-rosetta@^1.81.0:
     workerpool "^6.4.0"
     yargs "^16.2.0"
 
-jsii@1.81.0:
+jsii@1.81.0, jsii@^1.77.0:
   version "1.81.0"
   resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.81.0.tgz#144daeacfa41660d04b9c695f21c17d3ffd58515"
   integrity sha512-m5BQlNJGHFFwxUxZwagSqqMCS1wbt/0fKeEr+j7WWsG1lhu3fUxANYukUAeQEPJAPWuv0kAbqMaxj/4HSgd5RA==
@@ -3575,25 +3575,6 @@ jsii@1.81.0:
     fs-extra "^10.1.0"
     log4js "^6.9.1"
     semver "^7.5.0"
-    semver-intersect "^1.4.0"
-    sort-json "^2.0.1"
-    spdx-license-list "^6.6.0"
-    typescript "~3.9.10"
-    yargs "^16.2.0"
-
-jsii@^1.77.0:
-  version "1.80.0"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.80.0.tgz#f45a752b630e71e68f65c255440ebec4ae8a6d44"
-  integrity sha512-mw2xlpnGszpQMYZoHaKFx0TuxAuEW+tIMMVj5xXOsEBFnsc0bdVGkFPytg5VOjOiKK2PA2fAZO/3Y0Vtn3GY+Q==
-  dependencies:
-    "@jsii/check-node" "1.80.0"
-    "@jsii/spec" "^1.80.0"
-    case "^1.6.3"
-    chalk "^4"
-    fast-deep-equal "^3.1.3"
-    fs-extra "^10.1.0"
-    log4js "^6.9.1"
-    semver "^7.3.8"
     semver-intersect "^1.4.0"
     sort-json "^2.0.1"
     spdx-license-list "^6.6.0"
