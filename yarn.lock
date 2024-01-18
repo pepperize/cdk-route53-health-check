@@ -676,9 +676,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.698"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.698.tgz#afdc350c529ff5e10fda66fa9ad3c3968b5785a0"
-  integrity sha512-W1FUspjWjs5G/6EHjgDi2uTqa+KLTwCktBG/fH2g2R2WObuOlaZM/kLcKErolDgJQrwROrlu8hNd+mQY81gU2w==
+  version "0.0.699"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.699.tgz#69891a9cf2257ddfd8dffe45a89b1f704f20b630"
+  integrity sha512-zi+a2YzSRd2gxrG32Yz/7xVn95ICkRGFH0nRpyDclExYcB5oWS+LG8Zesd4mGa2QdMH/x0amqaGYDmyUhueJ+w==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.6"
