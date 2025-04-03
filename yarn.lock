@@ -1315,9 +1315,9 @@ aws-cdk-lib@2.46.0:
     yaml "1.10.2"
 
 aws-cdk@^2.67.0:
-  version "2.1006.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1006.0.tgz#21fd99184c5b0eea3c5c384fd5c5209e78569508"
-  integrity sha512-6qYnCt4mBN+3i/5F+FC2yMETkDHY/IL7gt3EuqKVPcaAO4jU7oXfVSlR60CYRkZWL4fnAurUV14RkJuJyVG/IA==
+  version "2.1007.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1007.0.tgz#cdeca2bd3a4a628c73c9dab3ac37f29d3f63b223"
+  integrity sha512-/UOYOTGWUm+pP9qxg03tID5tL6euC+pb+xo0RBue+xhnUWwj/Bbsw6DbqbpOPMrNzTUxmM723/uMEQmM6S26dw==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -3822,14 +3822,14 @@ jsesc@^3.0.2:
   integrity sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==
 
 jsii-diff@^1.77.0:
-  version "1.110.0"
-  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.110.0.tgz#fa45998e8fb85483fa0c0924f7702fe948937f73"
-  integrity sha512-cYEVZVn1NJ+jnIyStTjYwiMAMAu+Eqhqm+XLeZO7lvTSRZB2uQ78f4WrnXG9vleW+vXrBAEXW76tmxziokFQdw==
+  version "1.111.0"
+  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.111.0.tgz#25f1a6f02ec4e998e135c8a849d9526ce05d0da6"
+  integrity sha512-uKCJMhEyGUfnh0Pleg1B22Nk1hl5n9tF8QwuTmKYPVOTuEFXZvA4qXJuI+FQVZhg/aSM9P67fKM3NgeKD/pQkQ==
   dependencies:
-    "@jsii/check-node" "1.110.0"
-    "@jsii/spec" "^1.110.0"
+    "@jsii/check-node" "1.111.0"
+    "@jsii/spec" "^1.111.0"
     fs-extra "^10.1.0"
-    jsii-reflect "^1.110.0"
+    jsii-reflect "^1.111.0"
     log4js "^6.9.1"
     yargs "^16.2.0"
 
