@@ -1351,9 +1351,9 @@ aws-cdk-lib@2.46.0:
     yaml "1.10.2"
 
 aws-cdk@^2.67.0:
-  version "2.1013.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1013.0.tgz#14663ede2456b53dc26024ce29b8cc599803138e"
-  integrity sha512-cbq4cOoEIZueMWenGgfI4RujS+AQ9GaMCTlW/3CnvEIhMD8j/tgZx7PTtgMuvwYrRoEeb/wTxgLPgUd5FhsoHA==
+  version "2.1014.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1014.0.tgz#bd27af4060df15a05836a7ed3d19861e10740fd7"
+  integrity sha512-es101rtRAClix9BncNL54iW90MiOyRv4iCC5tv/firGDnidS6pPinuK0IIFt0RO6w0+3heRxWBXg8HY+f9877w==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -1622,10 +1622,10 @@ co@^4.6.0:
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
   integrity sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==
 
-codemaker@^1.111.0:
-  version "1.111.0"
-  resolved "https://registry.yarnpkg.com/codemaker/-/codemaker-1.111.0.tgz#3f86ca6fba71c9a75ba47e704d9e3cc814b97237"
-  integrity sha512-roT0x2rjngWUTbyM/mFyLSkh/H8YMZlaj7kSLzzJAZUSLxRjU/4zPd0bvjaRERVONJZMlitrP8ndmqnEjxLoBw==
+codemaker@^1.112.0:
+  version "1.112.0"
+  resolved "https://registry.yarnpkg.com/codemaker/-/codemaker-1.112.0.tgz#09ee7a309bde98d9a90d27311459d7906895ef4f"
+  integrity sha512-9dOcSOPEDAB5y4oimdsjzi9Za6vHi7wsUeLdH2NQpP1q88D2Oo8fj6YXqM7c/97tUFqX4OaanNjQCI3K6uyn4A==
   dependencies:
     camelcase "^6.3.0"
     decamelize "^5.0.1"
@@ -4040,34 +4040,34 @@ jsii-diff@^1.77.0:
     yargs "^16.2.0"
 
 jsii-docgen@^10.5.0:
-  version "10.7.2"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-10.7.2.tgz#67e5d85a3a0844c4fdac58ddf8c9d8fdba0a4c5f"
-  integrity sha512-8pd1RdNPQ3AUg9vwStknxbmSTyjOHgVC6NWN9Z2uGP5winvyUNqGShaef90jR/NerefWLRoLlDUEcXp1k0fFxQ==
+  version "10.7.3"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-10.7.3.tgz#9b67533c77c6bd79a674c3a289f0d5142b776571"
+  integrity sha512-dHDfJUcM0mxg2iACikSUTk8lv09xW7Oa50lKNduF13yPUJJ0ay9XMNpTDAX+M6V7t8uY/vv32tj4fBIIHJ6Njg==
   dependencies:
-    "@jsii/spec" "^1.111.0"
+    "@jsii/spec" "^1.112.0"
     case "^1.6.3"
     fs-extra "^10.1.0"
     glob "^8.1.0"
     glob-promise "^6.0.7"
-    jsii-reflect "^1.111.0"
+    jsii-reflect "^1.112.0"
     semver "^7.7.1"
     yargs "^16.2.0"
 
 jsii-pacmak@^1.77.0:
-  version "1.111.0"
-  resolved "https://registry.yarnpkg.com/jsii-pacmak/-/jsii-pacmak-1.111.0.tgz#9e899f47d800c709d5ed560703394cee6b1194e2"
-  integrity sha512-pq8XJUvp4TlY6Y4D5MWEWC2RGDE/p6RK2xUucrBg7JjSFI4itlJSzlKAkfvpvutnl5LaWcMMfGmdTxbObqas8A==
+  version "1.112.0"
+  resolved "https://registry.yarnpkg.com/jsii-pacmak/-/jsii-pacmak-1.112.0.tgz#5002e788f584c2155e11d2b40fcff43ff8040380"
+  integrity sha512-awdZ4Hb9pc8cKp2RVhJntoppgo5KnqP8f9YCmoHPPpPCS1hB3joxpVbNS6t2PYdGt1R+j7EcO7TJdah95cxE3w==
   dependencies:
-    "@jsii/check-node" "1.111.0"
-    "@jsii/spec" "^1.111.0"
+    "@jsii/check-node" "1.112.0"
+    "@jsii/spec" "^1.112.0"
     clone "^2.1.2"
-    codemaker "^1.111.0"
+    codemaker "^1.112.0"
     commonmark "^0.31.2"
     escape-string-regexp "^4.0.0"
     fs-extra "^10.1.0"
-    jsii-reflect "^1.111.0"
+    jsii-reflect "^1.112.0"
     semver "^7.7.1"
-    spdx-license-list "^6.9.0"
+    spdx-license-list "^6.10.0"
     xmlbuilder "^15.1.1"
     yargs "^16.2.0"
 
@@ -5403,7 +5403,7 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.20.tgz#e44ed19ed318dd1e5888f93325cee800f0f51b89"
   integrity sha512-jg25NiDV/1fLtSgEgyvVyDunvaNHbuwF9lfNV17gSmPFAlYzdfNBlLtLzXTevwkPj7DhGbmN9VnmJIgLnhvaBw==
 
-spdx-license-list@^6.10.0, spdx-license-list@^6.9.0:
+spdx-license-list@^6.10.0:
   version "6.10.0"
   resolved "https://registry.yarnpkg.com/spdx-license-list/-/spdx-license-list-6.10.0.tgz#738249443db42f5fd6780c7c40daecefed7a3adf"
   integrity sha512-wF3RhDFoqdu14d1Prv6c8aNU0FSRuSFJpNjWeygIZcNZEwPxp7I5/Hwo8j6lSkBKWAIkSQrKefrC5N0lvOP0Gw==
