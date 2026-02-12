@@ -54,7 +54,7 @@ export class AlarmHealthCheck extends HealthCheckBase {
         insufficientDataHealthStatus: insufficientDataHealthStatus,
         type: HealthCheckType.CLOUDWATCH_METRIC,
       },
-      healthCheckTags: [],
+      healthCheckTags: this.getSafeRenderedTags(),
     });
 
     this.healthCheckId = resource.attrHealthCheckId;

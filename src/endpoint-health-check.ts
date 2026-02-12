@@ -158,7 +158,7 @@ export class EndpointHealthCheck extends HealthCheckBase {
         measureLatency: props.latencyGraphs,
         regions: props.regions,
       },
-      healthCheckTags: [],
+      healthCheckTags: this.getSafeRenderedTags(),
     });
 
     this.healthCheckId = resource.attrHealthCheckId;

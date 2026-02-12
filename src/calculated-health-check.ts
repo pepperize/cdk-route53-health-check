@@ -58,7 +58,7 @@ export class CalculatedHealthCheck extends HealthCheckBase {
         healthThreshold: props.healthThreshold,
         type: HealthCheckType.CALCULATED,
       },
-      healthCheckTags: [],
+      healthCheckTags: this.getSafeRenderedTags(),
     });
 
     this.healthCheckId = resource.attrHealthCheckId;
