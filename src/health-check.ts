@@ -1,4 +1,4 @@
-import { ITaggable, Resource, TagManager, TagType } from "aws-cdk-lib";
+import { IResolvable, ITaggable, Lazy, Resource, TagManager, TagType, Token } from "aws-cdk-lib";
 import * as cloudwatch from "aws-cdk-lib/aws-cloudwatch";
 import * as route53 from "aws-cdk-lib/aws-route53";
 import { RecordSet } from "aws-cdk-lib/aws-route53";
@@ -84,6 +84,28 @@ export abstract class HealthCheckBase extends Resource implements IHealthCheck, 
   public abstract readonly healthCheckId: string;
 
   readonly tags = new TagManager(TagType.STANDARD, "AWS::Route53::HealthCheck");
+
+  protected resolveSafeTags(): route53.CfnHealthCheck.HealthCheckTagProperty[] | IResolvable {
+    return Lazy.any({
+      produce: () => {
+        const raw = this.tags.renderedTags;
+
+        if (Token.isUnresolved(raw)) {
+          return raw;
+        }
+
+        const arr = raw as unknown as route53.CfnHealthCheck.HealthCheckTagProperty[];
+
+        function isSafeString(v: unknown) {
+          if (typeof v !== "string") return false;
+          const allowed = /^[a-zA-Z0-9 _.:\/=+\-@]+$/;
+          return allowed.test(v) && !v.includes("${") && !v.includes("}") && !v.includes("$");
+        }
+
+        return arr.filter((t) => isSafeString(t.value)).map((t) => ({ key: t.key!, value: t.value! }));
+      },
+    });
+  }
 
   failover(recordSet: RecordSet, evaluateTargetHealth?: boolean, failover?: Failover) {
     const resource = recordSet.node.defaultChild;
