@@ -85,7 +85,7 @@ export abstract class HealthCheckBase extends Resource implements IHealthCheck, 
 
   readonly tags = new TagManager(TagType.STANDARD, "AWS::Route53::HealthCheck");
 
-  protected getSafeRenderedTags(): route53.CfnHealthCheck.HealthCheckTagProperty[] | IResolvable {
+  protected resolveSafeTags(): route53.CfnHealthCheck.HealthCheckTagProperty[] | IResolvable {
     return Lazy.any({
       produce: () => {
         const raw = this.tags.renderedTags;
@@ -102,9 +102,7 @@ export abstract class HealthCheckBase extends Resource implements IHealthCheck, 
           return allowed.test(v) && !v.includes("${") && !v.includes("}") && !v.includes("$");
         }
 
-        return arr
-          .filter((t) => typeof t.key === "string" && isSafeString(t.value))
-          .map((t) => ({ key: t.key!, value: t.value! }));
+        return arr.filter((t) => isSafeString(t.value)).map((t) => ({ key: t.key!, value: t.value! }));
       },
     });
   }
