@@ -37,7 +37,7 @@ const project = new AwsCdkConstructLibrary({
     module: "pepperize_cdk_route53_health_check",
   },
   publishToMaven: {
-    mavenEndpoint: "https://s01.oss.sonatype.org",
+    mavenEndpoint: "https://ossrh-staging-api.central.sonatype.com",
     mavenGroupId: "com.pepperize",
     mavenArtifactId: "cdk-route53-health-check",
     javaPackage: "com.pepperize.cdk.route53_health_check",
