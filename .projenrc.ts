@@ -3,7 +3,8 @@ import { javascript } from "projen";
 const project = new AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
-  cdkVersion: "2.46.0",
+  cdkVersion: "2.278.0",
+  jsiiVersion: "~6.0.0",
   name: "@pepperize/cdk-route53-health-check",
   description:
     "Create Route53 HealthChecks to monitor TCP, HTTP, HTTPS endpoints, CloudWatch Alarms and other Route53 HealthChecks.",
@@ -22,8 +23,14 @@ const project = new AwsCdkConstructLibrary({
   repositoryUrl: "https://github.com/pepperize/cdk-route53-health-check.git",
 
   projenrcTs: true,
+  minNodeVersion: "22.13.0",
+  workflowNodeVersion: "24.x",
+  jestOptions: {
+    jestVersion: "^30",
+  },
+  packageManager: javascript.NodePackageManager.YARN_CLASSIC,
 
-  devDeps: ["@pepperize/projen-awscdk-construct@latest", "aws-cdk"],
+  devDeps: ["@pepperize/projen-awscdk-construct@~0.1.1", "@types/node@^22", "typescript@~6.0", "aws-cdk"],
 
   defaultReleaseBranch: "main",
   releaseToNpm: true,
@@ -37,7 +44,6 @@ const project = new AwsCdkConstructLibrary({
     module: "pepperize_cdk_route53_health_check",
   },
   publishToMaven: {
-    mavenEndpoint: "https://ossrh-staging-api.central.sonatype.com",
     mavenGroupId: "com.pepperize",
     mavenArtifactId: "cdk-route53-health-check",
     javaPackage: "com.pepperize.cdk.route53_health_check",

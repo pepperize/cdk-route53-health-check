@@ -1,4 +1,4 @@
-import { Stack } from "aws-cdk-lib";
+import { Stack, Tags } from "aws-cdk-lib";
 import { Annotations, Capture, Match, Template } from "aws-cdk-lib/assertions";
 import { EndpointHealthCheck, HealthCheckerRegions } from "../src";
 
@@ -99,6 +99,27 @@ describe("EndpointHealthCheck", () => {
           Value: "pepperize.com",
         },
       ],
+    });
+  });
+
+  it("Should have HealthCheckTags from the scope", () => {
+    // Given
+    const stack = new Stack();
+    new EndpointHealthCheck(stack, "HealthCheck", {
+      healthCheckName: "pepperize.com",
+      domainName: "pepperize.com",
+    });
+    Tags.of(stack).add("Environment", "production");
+
+    // When
+    const template = Template.fromStack(stack);
+
+    // Then
+    template.hasResourceProperties("AWS::Route53::HealthCheck", {
+      HealthCheckTags: Match.arrayWith([
+        { Key: "Environment", Value: "production" },
+        { Key: "Name", Value: "pepperize.com" },
+      ]),
     });
   });
 

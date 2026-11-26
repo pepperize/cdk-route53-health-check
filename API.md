@@ -4,7 +4,7 @@
 
 ### AlarmHealthCheck <a name="AlarmHealthCheck" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck"></a>
 
-- *Implements:* <a href="#@pepperize/cdk-route53-health-check.IHealthCheck">IHealthCheck</a>, aws-cdk-lib.ITaggable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, aws-cdk-lib.interfaces.IEnvironmentAware, <a href="#@pepperize/cdk-route53-health-check.IHealthCheck">IHealthCheck</a>, aws-cdk-lib.ITaggable
 
 Create a Route53 HealthCheck that monitors a CloudWatch Alarm.
 
@@ -59,6 +59,8 @@ new AlarmHealthCheck(scope: Construct, id: string, props: AlarmHealthCheckProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.with">with</a></code> | Applies one or more mixins to this construct. |
+| <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Override the cross-stack reference strength for this resource. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.failover">failover</a></code> | Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.failoverPrimary">failoverPrimary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
@@ -75,6 +77,47 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
+
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Override the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+mechanism instead of the global default determined by the
+`@aws-cdk/core:defaultCrossStackReferences` context key. This is useful for
+selectively weakening specific references to avoid the "deadly embrace" problem
+without changing the app-wide default.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.applyRemovalPolicy"></a>
 
@@ -215,7 +258,7 @@ Route53 health checkers report that the HealthCheck is healthy or unhealthy.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.isConstruct"></a>
 
 ```typescript
 import { AlarmHealthCheck } from '@pepperize/cdk-route53-health-check'
@@ -224,6 +267,20 @@ AlarmHealthCheck.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@pepperize/cdk-route53-health-check.AlarmHealthCheck.isConstruct.parameter.x"></a>
 
@@ -298,7 +355,7 @@ Import an existing Route53 HealthCheck.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.property.healthCheckId">healthCheckId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@pepperize/cdk-route53-health-check.AlarmHealthCheck.property.tags">tags</a></code> | <code>aws-cdk-lib.TagManager</code> | TagManager to set, remove and format tags. |
@@ -323,16 +380,17 @@ The tree node.
 public readonly env: ResourceEnvironment;
 ```
 
-- *Type:* aws-cdk-lib.ResourceEnvironment
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
+For resources that are created and managed in a Stack (those created by
+creating new class instances like `new Role()`, `new Bucket()`, etc.), this
+is always the same as the environment of the stack they belong to.
+
+For referenced resources (those obtained from referencing methods like
+`Role.fromRoleArn()`, `Bucket.fromBucketName()`, etc.), they might be
+different than the stack they were imported into.
 
 ---
 
@@ -373,7 +431,7 @@ TagManager to set, remove and format tags.
 
 ### CalculatedHealthCheck <a name="CalculatedHealthCheck" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck"></a>
 
-- *Implements:* <a href="#@pepperize/cdk-route53-health-check.IHealthCheck">IHealthCheck</a>, aws-cdk-lib.ITaggable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, aws-cdk-lib.interfaces.IEnvironmentAware, <a href="#@pepperize/cdk-route53-health-check.IHealthCheck">IHealthCheck</a>, aws-cdk-lib.ITaggable
 
 Create a Route53 HealthCheck that monitors other Route53 HealthChecks.
 
@@ -428,6 +486,8 @@ new CalculatedHealthCheck(scope: Construct, id: string, props: CalculatedHealthC
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.with">with</a></code> | Applies one or more mixins to this construct. |
+| <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Override the cross-stack reference strength for this resource. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.addChildHealthCheck">addChildHealthCheck</a></code> | *No description.* |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.failover">failover</a></code> | Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet. |
@@ -446,6 +506,47 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
+
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Override the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+mechanism instead of the global default determined by the
+`@aws-cdk/core:defaultCrossStackReferences` context key. This is useful for
+selectively weakening specific references to avoid the "deadly embrace" problem
+without changing the app-wide default.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.applyRemovalPolicy"></a>
 
@@ -614,7 +715,7 @@ Route53 health checkers report that the HealthCheck is healthy or unhealthy.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.isConstruct"></a>
 
 ```typescript
 import { CalculatedHealthCheck } from '@pepperize/cdk-route53-health-check'
@@ -623,6 +724,20 @@ CalculatedHealthCheck.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@pepperize/cdk-route53-health-check.CalculatedHealthCheck.isConstruct.parameter.x"></a>
 
@@ -697,7 +812,7 @@ Import an existing Route53 HealthCheck.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.property.healthCheckId">healthCheckId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@pepperize/cdk-route53-health-check.CalculatedHealthCheck.property.tags">tags</a></code> | <code>aws-cdk-lib.TagManager</code> | TagManager to set, remove and format tags. |
@@ -722,16 +837,17 @@ The tree node.
 public readonly env: ResourceEnvironment;
 ```
 
-- *Type:* aws-cdk-lib.ResourceEnvironment
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
+For resources that are created and managed in a Stack (those created by
+creating new class instances like `new Role()`, `new Bucket()`, etc.), this
+is always the same as the environment of the stack they belong to.
+
+For referenced resources (those obtained from referencing methods like
+`Role.fromRoleArn()`, `Bucket.fromBucketName()`, etc.), they might be
+different than the stack they were imported into.
 
 ---
 
@@ -772,7 +888,7 @@ TagManager to set, remove and format tags.
 
 ### EndpointHealthCheck <a name="EndpointHealthCheck" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck"></a>
 
-- *Implements:* <a href="#@pepperize/cdk-route53-health-check.IHealthCheck">IHealthCheck</a>, aws-cdk-lib.ITaggable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, aws-cdk-lib.interfaces.IEnvironmentAware, <a href="#@pepperize/cdk-route53-health-check.IHealthCheck">IHealthCheck</a>, aws-cdk-lib.ITaggable
 
 Create a Route53 HealthCheck that monitors an endpoint either by domain name or by IP address.
 
@@ -835,6 +951,8 @@ new EndpointHealthCheck(scope: Construct, id: string, props: EndpointHealthCheck
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.with">with</a></code> | Applies one or more mixins to this construct. |
+| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Override the cross-stack reference strength for this resource. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.failover">failover</a></code> | Sets `this.healthCheckId` as the value for `HealthCheckId` on the given RecordSet. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.failoverPrimary">failoverPrimary</a></code> | Sets `PRIMARY` as the value for `Failover` on the given RecordSet. Additionally, sets `this.healthCheckId` as the value for `HealthCheckId`. |
@@ -855,6 +973,47 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
+
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Override the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+mechanism instead of the global default determined by the
+`@aws-cdk/core:defaultCrossStackReferences` context key. This is useful for
+selectively weakening specific references to avoid the "deadly embrace" problem
+without changing the app-wide default.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.applyRemovalPolicy"></a>
 
@@ -1061,7 +1220,7 @@ Valid statistics: Average (recommended), Minimum, Maximum
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.isConstruct"></a>
 
 ```typescript
 import { EndpointHealthCheck } from '@pepperize/cdk-route53-health-check'
@@ -1070,6 +1229,20 @@ EndpointHealthCheck.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@pepperize/cdk-route53-health-check.EndpointHealthCheck.isConstruct.parameter.x"></a>
 
@@ -1144,7 +1317,7 @@ Import an existing Route53 HealthCheck.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.property.healthCheckId">healthCheckId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@pepperize/cdk-route53-health-check.EndpointHealthCheck.property.tags">tags</a></code> | <code>aws-cdk-lib.TagManager</code> | TagManager to set, remove and format tags. |
@@ -1169,16 +1342,17 @@ The tree node.
 public readonly env: ResourceEnvironment;
 ```
 
-- *Type:* aws-cdk-lib.ResourceEnvironment
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
+For resources that are created and managed in a Stack (those created by
+creating new class instances like `new Role()`, `new Bucket()`, etc.), this
+is always the same as the environment of the stack they belong to.
+
+For referenced resources (those obtained from referencing methods like
+`Role.fromRoleArn()`, `Bucket.fromBucketName()`, etc.), they might be
+different than the stack they were imported into.
 
 ---
 
