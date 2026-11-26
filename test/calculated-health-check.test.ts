@@ -28,7 +28,7 @@ describe("CalculatedHealthCheck", () => {
     const endpointHealthCheck = EndpointHealthCheck.fromHealthCheckId(
       stack,
       "EndpointHealthCheck",
-      "9ebee2db-6292-4803-9838-327e6example"
+      "9ebee2db-6292-4803-9838-327e6example",
     );
     const calculatedHealthCheck = new CalculatedHealthCheck(stack, "CalculatedHealthCheck", {
       healthCheckName: "calculated",

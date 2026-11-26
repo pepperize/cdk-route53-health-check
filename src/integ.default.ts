@@ -35,7 +35,7 @@ const secondary = new Stack(app, "Secondary");
 const certificate = acm.Certificate.fromCertificateArn(
   secondary,
   "Certificate",
-  "arn:aws:acm:region:account:certificate/certificate_ID"
+  "arn:aws:acm:region:account:certificate/certificate_ID",
 );
 const restApi = new apigateway.RestApi(secondary, "RestApi", {
   domainName: { domainName: "www-1.pepperize.com", certificate: certificate },

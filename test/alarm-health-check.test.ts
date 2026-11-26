@@ -10,7 +10,7 @@ describe("AlarmHealthCheck", () => {
     const alarm = cloudwatch.Alarm.fromAlarmArn(
       stack,
       "Alarm",
-      "arn:aws:cloudwatch:us-east-1:123456789012:alarm:any-alarm"
+      "arn:aws:cloudwatch:us-east-1:123456789012:alarm:any-alarm",
     );
     new AlarmHealthCheck(stack, "HealthCheck", {
       alarm: alarm,
@@ -28,7 +28,7 @@ describe("AlarmHealthCheck", () => {
     const alarm = cloudwatch.Alarm.fromAlarmArn(
       stack,
       "Alarm",
-      "arn:aws:cloudwatch:us-east-1:123456789012:alarm:any-alarm"
+      "arn:aws:cloudwatch:us-east-1:123456789012:alarm:any-alarm",
     );
     new AlarmHealthCheck(stack, "HealthCheck", {
       healthCheckName: "alarm",
